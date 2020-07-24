@@ -29,10 +29,8 @@ public enum InterfaceController {
 
     @SuppressWarnings("unused")
     public void initialize(Object plugin) {
-        if (this.plugin != null) {
-            return;
-        }
         this.plugin = plugin;
+        Sponge.getEventManager().unregisterListeners(this);
         Sponge.getEventManager().registerListeners(plugin, this);
     }
 
