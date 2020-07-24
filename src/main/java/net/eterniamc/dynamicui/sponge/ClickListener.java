@@ -1,7 +1,6 @@
-package net.eterniamc.dynamicui;
+package net.eterniamc.dynamicui.sponge;
 
 import org.spongepowered.api.entity.living.player.Player;
-import org.spongepowered.api.event.item.inventory.ClickInventoryEvent;
 
 public interface ClickListener {
 

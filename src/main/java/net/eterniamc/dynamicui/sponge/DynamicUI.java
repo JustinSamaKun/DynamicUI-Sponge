@@ -1,4 +1,4 @@
-package net.eterniamc.dynamicui;
+package net.eterniamc.dynamicui.sponge;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;

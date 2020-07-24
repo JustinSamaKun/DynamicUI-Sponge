@@ -1,4 +1,4 @@
-package net.eterniamc.dynamicui;
+package net.eterniamc.dynamicui.sponge;
 
 public enum ClickType {
     DRAG,
