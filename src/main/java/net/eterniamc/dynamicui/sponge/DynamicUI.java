@@ -12,6 +12,7 @@ import org.spongepowered.api.item.inventory.property.InventoryDimension;
 import org.spongepowered.api.item.inventory.property.InventoryTitle;
 import org.spongepowered.api.item.inventory.property.SlotIndex;
 import org.spongepowered.api.item.inventory.query.QueryOperationTypes;
+import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.format.TextColors;
 import org.spongepowered.api.text.serializer.TextSerializers;
@@ -128,6 +129,14 @@ public abstract class DynamicUI {
                 }
             }
         }
+    }
+
+    /**
+     * Sponge puts the item the player clicks back in its slot after the click event is ran. This should be used
+     * to get around sponge overwriting your rerendered inventory with a previously clicked item.
+     */
+    public void delayedRender() {
+        Task.builder().delayTicks(1).execute(this::render).submit(InterfaceController.INSTANCE.getPlugin());
     }
 
     public void setItem(int slot, ItemStack stack) {
